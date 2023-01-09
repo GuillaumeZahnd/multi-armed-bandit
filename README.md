@@ -1,6 +1,6 @@
 # Multi-armed bandit (MAB) game
 
-## Epsilon-greedy applied to the stochastic MAB problem
+## Epsilon-greedy algorithm applied to the stochastic MAB problem
 
 ### Stochastic process
 
