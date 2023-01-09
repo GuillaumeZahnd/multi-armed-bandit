@@ -4,13 +4,13 @@
 
 ### Stochastic process
 
-Let there be a bandit with `K` non-identical arms, each following a different probability density function (PDF). The graph below shows the PDF of a 7-armed bandit, where each PDF is a normal distribution of mean `mu[k]` and standard deviation `sigma[k]`.
+Let there be a bandit with `K` non-identical arms, each following a different probability density function (PDF). The graph below shows the PDF of a 7-armed bandit, where each PDF is a normal distribution, truncated within `[0,1]`, with mean `mu[k]` and standard deviation `sigma[k]`.
 
 ![distributions.png](../readme_images/distributions.png?raw=true)
 
 ### Game description
 
-The true underlying PDF of the bandit arms is unknown a priori. A player is given a total of `T` shots to obtain rewards by interacting with the bandit. At each timestep `t`, the player decides which arm to pull, and receives a reward sampled from the PDF of the pulled arm. The value of the received reward is the only information provided to the player. Throughout the game, the rewards distribution is neither modified contextually (i.e., by the environment or the player actions), nor adversarially (i.e., by the bandit itself).
+The true underlying PDF of the bandit arms is unknown a priori. A player is given a total of `T` shots to obtain rewards by interacting with the bandit. At each timestep `t`, the player decides which arm to pull, and subsequently receives a reward sampled from the PDF of the pulled arm. The value of the received reward is the only information provided to the player. Throughout the game, the rewards distribution is neither modified contextually (i.e., by the environment or the player actions), nor adversarially (i.e., by the bandit itself).
 
 The player interest is to maximize the sum of their rewards, by adopting the optimal strategy combining exploration (i.e., trying out each arm to find the best one) and exploitation (i.e., playing the arm believed to give the best payoff).
 
@@ -59,7 +59,7 @@ The graph below shows the rewards that were received at each timestep (blue), th
 
 ## Regret minimization
 
-Regret is defined as the cumulative sum of the difference between the maximal expectation and the expectation of the pulled arm, at each timestep (green). The graph below shows the cumulative rewards obtained by the epsilon-greedy strategy (blue), compared against the maximal cumulative expectation (orange) and the result of a fully-random pulling strategy (s.t. `epsilon = 1` and `decay = 1`, pink). 
+The graph below shows the regret, defined as the cumulative sum of the difference between the maximal expectation and the expectation of the pulled arm (green), and the cumulative rewards obtained by the epsilon-greedy strategy (blue) compared against the maximal cumulative expectation (orange) and the result of a fully-random pulling strategy (exploration-only, pink). 
 
 ![regret_and_cumulative_rewards.png](../readme_images/regret_and_cumulative_rewards.png?raw=true)
 
