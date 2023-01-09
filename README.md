@@ -1,6 +1,6 @@
-# Multi-armed bandit (MBA) game
+# Multi-armed bandit (MAB) game
 
-## Epsilon-greedy applied to the stochastic MBA problem
+## Epsilon-greedy applied to the stochastic MAB problem
 
 ### Stochastic process
 
